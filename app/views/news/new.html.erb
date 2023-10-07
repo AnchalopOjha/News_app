@@ -1,0 +1,46 @@
+<!-- app/views/categories/edit.html.erb -->
+
+<h1>new News</h1>
+
+<%= form_with(model: @news, url: news_index_path) do |form| %>
+ 
+   <%
+=begin%>
+ <%= image_tag @news.image.url %>  
+<%
+=end%>
+   <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+    <div class="field">
+    <%= form.label :author_name %>
+    <%= form.text_field :author_name %>
+  </div>
+
+    <div class="field">
+    <%= form.label :description %>
+    <%= form.text_field :description %>
+  </div>
+
+    <div class="field">
+    <%= form.label :sub_title%>
+    <%= form.text_field :sub_title %>
+  </div>
+
+    <div class="field">
+    <%= form.label :category_id %>
+     <%= form.collection_select(:category_id,Category.all,:id,:name)%>
+  </div>
+
+
+  <%= form.file_field :image %>
+
+   <div class="field">
+    <%= form.label :city_id %>
+     <%= form.collection_select(:city_id,City.all,:id,:name)%>
+  </div>
+
+  <%= form.submit 'create News' %>
+<% end %>

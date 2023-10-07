@@ -1,0 +1,18 @@
+<!-- app/views/categories/edit.html.erb -->
+
+<h1>new City</h1>
+
+<%= form_with(model: @city, url: cities_path) do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+   <div class="field">
+    <%= form.label :state_id %>
+    <%= form.collection_select(:state_id,State.all,:id,:name)%>
+  </div>
+
+  <%= form.submit 'create City' %>
+<% end %>
+
+<%= link_to 'Back', cities_path %>

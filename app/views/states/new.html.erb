@@ -1,0 +1,14 @@
+<!-- app/views/categories/edit.html.erb -->
+<%= render "shered/navbar" %>
+<h1>new State</h1>
+
+<%= form_with(model: @state, url: states_path) do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <%= form.submit 'create State' %>
+<% end %>
+
+<%= link_to 'Back', states_path %>

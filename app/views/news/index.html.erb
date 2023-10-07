@@ -1,0 +1,26 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Author name</th>
+      <th scope="col">category name</th>
+
+      
+      <th scope="col">SUb_title</th>
+      <th scope="col">Discriptions</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @news.each do |news|%>
+    <tr>
+      <td><%= news.title%></td>
+     <td><%= news.author_name%></td>
+     <td><%= news.category.name%></td>
+
+      <td><%= news.sub_title%></td>
+      <td><%= news.description%></td>
+    </tr>
+    <%end%>
+    
+  </tbody>
+</table>

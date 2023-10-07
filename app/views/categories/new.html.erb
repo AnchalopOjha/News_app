@@ -1,0 +1,14 @@
+<!-- app/views/categories/edit.html.erb -->
+
+<h1>new Category</h1>
+
+<%= form_with(model: @category, url: categories_path) do |form| %>
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <%= form.submit 'create Category' %>
+<% end %>
+
+<%= link_to 'Back', categories_path %>
